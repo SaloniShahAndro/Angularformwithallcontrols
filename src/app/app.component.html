@@ -1,20 +1,149 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<h3>Registration</h3>
 
+<div class="ui-g ui-fluid">
+    <div class="ui-g-12">
+        <div class="ui-inputgroup">
+            <span class="ui-md-2">Username</span>
+            <span class="ui-inputgroup-addon">
+                <i class="fa fa-user"></i>
+            </span>
+            <input type="text" pInputText placeholder=" Username" [(ngModel)]="name">
+        </div>
+    </div>
+
+    <div class="ui-g-12">
+        <div class="ui-inputgroup">
+            <span class="ui-md-2">Mobile number</span>
+            <span class="ui-inputgroup-addon">
+                <i class="fa fa-mobile"></i>
+            </span>
+            <input type="text" pInputText placeholder=" Mobile number" [(ngModel)]="mobile">
+        </div>
+    </div>
+
+    <div class="ui-g-12">
+        <div class="ui-inputgroup">
+            <span class="ui-md-2">Email Id</span>
+            <span class="ui-inputgroup-addon">
+                <i class="fa fa-envelope"></i>
+            </span>
+            <input type="text" pInputText placeholder=" Email Id" [(ngModel)]="email">
+        </div>
+    </div>
+
+    <div class="ui-g-12">
+        <div class="ui-inputgroup">
+            <span class="ui-md-2">Password</span>
+            <span class="ui-inputgroup-addon">
+                <i class="fa fa-lock"></i>
+            </span>
+            <input type="password" pInputText placeholder=" Password" [(ngModel)]="pwd" minlength="6" maxlength="20">
+        </div>
+    </div>
+
+    <div class="ui-g-12">
+        <div class="ui-inputgroup">
+            <span class="ui-md-2">Confirm Password</span>
+            <span class="ui-inputgroup-addon">
+                <i class="fa fa-lock"></i>
+            </span>
+            <input type="password" pInputText placeholder=" Confirm password" [(ngModel)]="cpwd" minlength="6" maxlength="20">
+        </div>
+    </div>
+
+    <div class="ui-g-12">
+        <div class="ui-inputgroup">
+            <span class="ui-md-2">Date of Birth</span>
+            <p-calendar [(ngModel)]="date3" [showIcon]="true" [monthNavigator]="true" [yearNavigator]="true" yearRange="1990:2030"></p-calendar> <span style="margin-left:35px">{{date3|date}}</span>
+        </div>
+    </div>
+
+    <div class="ui-g-12">
+        <div class="ui-inputgroup">
+            <span class="ui-md-2">Address</span>
+            <textarea rows=5 cols=25 pInputTextarea [(ngModel)]="address"></textarea>
+        </div>
+    </div>
+
+    <div class="ui-g-12">
+        <div class="ui-inputgroup">
+            <span class="ui-md-2">Gender</span>
+            <div class="ui-g" style="width:250px;margin-bottom:10px">
+
+                <div class="ui-g-12">
+                    <p-radioButton name="gender" value="Male" label="Male" [(ngModel)]="gender" inputId="opt1"></p-radioButton>
+                </div>
+                <div class="ui-g-12">
+                    <p-radioButton name="gender" value="Female" label="Female" [(ngModel)]="gender" inputId="opt2"></p-radioButton>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="ui-g-12">
+        <div class="ui-inputgroup">
+            <span class="ui-md-2">Hobbies</span>
+            <div class="ui-g" style="width:250px;margin-bottom:10px">
+                <div class="ui-g-12">
+                    <p-checkbox name="hobbies" value="music" label=" music" [(ngModel)]="hobby" inputId="m"></p-checkbox>
+                </div>
+                <div class="ui-g-12">
+                    <p-checkbox name="hobbies" value="dance" label=" dance" [(ngModel)]="hobby" inputId="d"></p-checkbox>
+                </div>
+                <div class="ui-g-12">
+                    <p-checkbox name="hobbies" value="cricket" label=" cricket" [(ngModel)]="hobby" inputId="c"></p-checkbox>
+                </div>
+            </div>
+            <span>Your hobbies are : {{hobby}}</span>
+        </div>
+    </div>
+
+
+    <div class="ui-g-12">
+        <div class="ui-inputgroup">
+            <span class="ui-md-2">Price</span>
+            <span class="ui-inputgroup-addon">$</span>
+            <input type="text" pInputText placeholder="Price">
+            <span class="ui-inputgroup-addon">.00</span>
+        </div>
+    </div>
+
+    <div class="ui-g-12">
+        <div class="ui-inputgroup">
+            <span class="ui-md-2">Website</span>
+            <span class="ui-inputgroup-addon">www</span>
+            <input type="text" pInputText placeholder="Website">
+        </div>
+    </div>
+
+    <button pButton type="button" (click)="count()" label="Submit" class="ui-button-success ui-g-12"></button>
+
+</div>
+
+
+<!-- <p-accordion>
+    <p-accordionTab header="Salads">
+        Salads...
+    </p-accordionTab>
+    <p-accordionTab header="Pasta">
+        Pasta...
+        <br/> Maggie
+    </p-accordionTab>
+    <p-accordionTab header="Pizza" [selected]="true">
+        <p-radioButton label="Double cheese 🧀🧀" name="pizza" value="double-cheese" [(ngModel)]="pizzaSelection">
+        </p-radioButton>
+        <br>
+        <p-radioButton label="Anchovy" name="pizza" value="anchovy" [(ngModel)]="pizzaSelection"></p-radioButton>
+        <br>
+        <p-radioButton label="Meat lover's 🍖" name="pizza" value="meat-lover" [(ngModel)]="pizzaSelection">
+        </p-radioButton>
+    </p-accordionTab>
+</p-accordion>
+
+<br>
+
+<p-panel header="Extras" *ngIf="pizzaSelection && pizzaSelection.length">
+    🍕 Would you like extra cheese on your pizza?
+    <button pButton type="button" label="Ok, yeah!"></button>
+</p-panel> -->
