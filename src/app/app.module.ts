@@ -9,16 +9,26 @@ import { CalendarModule } from 'primeng/calendar';
 
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
+
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import {Validators,FormControl,FormGroup,FormBuilder} from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import {CheckboxModule} from 'primeng/checkbox';
 import {PasswordModule} from 'primeng/password';
+import {InputMaskModule} from 'primeng/inputmask';
+import {KeyFilterModule} from 'primeng/keyfilter';
+
+import { HttpClientModule } from '@angular/common/http';  // replaces previous Http service
+import {DataService} from './data.service';
+import { AppRoutingModule } from './/app-routing.module';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component'
 
 
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, LoginComponent, RegisterComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -29,9 +39,14 @@ import {PasswordModule} from 'primeng/password';
     RadioButtonModule,
     CalendarModule,
     CheckboxModule,
-    PasswordModule
+    PasswordModule,
+    ReactiveFormsModule,
+    InputMaskModule,
+    KeyFilterModule,
+    HttpClientModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

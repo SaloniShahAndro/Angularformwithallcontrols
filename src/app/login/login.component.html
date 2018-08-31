@@ -1,0 +1,50 @@
+<h3>Login</h3>
+<form [formGroup]="userform" (ngSubmit)="onSubmit(userform.value)">
+
+    <div class="ui-g ui-fluid">
+       
+
+        <div class="ui-g-12">
+            <div class="ui-inputgroup">
+                <span class="ui-md-4">Email Id</span>
+                <span class="ui-inputgroup-addon">
+                    <i class="fa fa-envelope"></i>
+                </span>
+                <input type="text" pInputText placeholder=" Email Id" formControlName="email">
+            </div>
+            <div class="ui-grid-col-4">
+                <div class="ui-message ui-messages-error ui-corner-all" *ngIf="!userform.controls['email'].valid&&userform.controls['email'].dirty">
+                    <span *ngIf="userform.controls['email'].errors['required']">Email is required</span>
+                    <span *ngIf="userform.controls['email'].errors['email']">Email is not valid</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="ui-g-12">
+            <div class="ui-inputgroup">
+                <span class="ui-md-4">Password</span>
+                <span class="ui-inputgroup-addon">
+                    <i class="fa fa-lock"></i>
+                </span>
+                <input type="password" pInputText placeholder=" Password" formControlName="pwd" minlength="6" maxlength="20">
+            </div>
+            <div class="ui-grid-col-4">
+                <div class="ui-message ui-messages-error ui-corner-all" *ngIf="!userform.controls['pwd'].valid&&userform.controls['pwd'].dirty">
+                    <span *ngIf="userform.controls['pwd'].errors['required']">Password is required</span>
+                    <span *ngIf="userform.controls['pwd'].errors['minlength']">Password should be greater than 6 digits</span>
+                    <span *ngIf="userform.controls['pwd'].errors['maxlength']">Password should between 6 to 20 digits</span>
+                </div>
+            </div>
+        </div>
+
+       
+        <div class="ui-g-2">
+
+            <button pButton type="submit" label="Submit" [disabled]="!userform.valid" class="ui-button-success"></button>
+
+            <div class="ui-grid-col-4"></div>
+        </div>
+
+    </div>
+</form>
+
